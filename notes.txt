@@ -1,0 +1,9 @@
+git config --global user.name RamPOE
+edit .gitconfig
+------------------------------------------
+[user]
+	name = RamPOE
+[http]
+Proxy="http://vdsi\\user:pwd@qroxz.ebiz.softpulse.com:80"
+ssVerify=false
+
