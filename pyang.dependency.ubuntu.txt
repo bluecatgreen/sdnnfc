@@ -7,4 +7,10 @@ sudo apt install libxslt1-dev
 sudo apt-get install python3-dev
 sudo apt-get install python3-lxml
 sudo -E  python3 setup.py install
+sudo apt install xsltproc
+cd ../pyang/
+sudo mkdir /usr/local/share/yang
+sudo cp -r xslt /usr/local/share/yang/
+sudo apt install libxml2-utils
+sudo cp -r schema/ /usr/local/share/yang/
 
