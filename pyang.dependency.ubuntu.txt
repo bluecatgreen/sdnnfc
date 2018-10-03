@@ -1,0 +1,10 @@
+git clone https://github.com/mbj4668/pyang.git
+sudo apt install python3-setuptools
+sudo -E apt-get install libxml2
+sudo apt-get update
+sudo -E apt-get install gcc
+sudo apt install libxslt1-dev
+sudo apt-get install python3-dev
+sudo apt-get install python3-lxml
+sudo -E  python3 setup.py install
+
