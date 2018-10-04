@@ -13,4 +13,7 @@ sudo mkdir /usr/local/share/yang
 sudo cp -r xslt /usr/local/share/yang/
 sudo apt install libxml2-utils
 sudo cp -r schema/ /usr/local/share/yang/
-
+sudo apt install jing
+jing is better RELAX NG validator need to use -j option when invoking yang2dsdl
+#yang2dsdl -j  -v oc-equipment.xml openconfig-platform.yang
+ 
