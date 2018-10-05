@@ -1,0 +1,8 @@
+Instance type t2.micro
+Security groups 000-MASTER-HTTP-ALL, 000-MASTER-SSH-ALL, 000-MASTER-HTTPS-ALL. view inbound rules. view outbound rules
+VPC ID vpc-2a05b34e
+AMI ID ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20180814 (ami-04169656fea786776)
+Subnet ID subnet-9a1321b1
+IAM role Developer-vz-it-np
+Key pair name Jankiram2018
+Vsad IPJV
