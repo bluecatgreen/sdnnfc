@@ -16,11 +16,11 @@ Acquire::http::proxy "http://vdsi\\user:pwd@qroxz.ebiz.softpulse.com:80";
 sudo apt-get update
 
 # for wget
-http_proxy=http://qroxz.ebiz.softpulse.com:80/
-https_proxy_password=pwd
-http_proxy_password=pwd
-https_proxy_username=vdsi\user
-https_proxy=http://qroxz.ebiz.softpulse.com:80/
-http_proxy_username=vdsi\user
+export http_proxy=http://proxy.ebiz.verizon.com:80/
+export https_proxy_password=MayJune01#
+export http_proxy_password=MayJune01#
+export https_proxy_username=vdsi\v545583
+export https_proxy=http://proxy.ebiz.verizon.com:80/
+export http_proxy_username=vdsi\v545583
 
 use sudo -E to pass above env to sudo command
