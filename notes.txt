@@ -1,0 +1,26 @@
+# git
+git config --global user.name RamPOE
+edit .gitconfig
+------------------------------------------
+[user]
+	name = RamPOE
+[http]
+Proxy="http://vdsi\\user:pwd@qroxz.ebiz.softpulse.com:80"
+ssVerify=false
+
+# apt-get
+sudo vi /etc/apt/apt.conf
+
+Acquire::http::proxy "http://vdsi\\user:pwd@qroxz.ebiz.softpulse.com:80";
+
+sudo apt-get update
+
+# for wget
+export http_proxy=http://proxy.ebiz..com:80/
+export https_proxy_password=pwd#
+export http_proxy_password=pwd#
+export https_proxy_username=
+export https_proxy=http://proxy.ebiz..com:80/
+export http_proxy_username=
+
+use sudo -E to pass above env to sudo command
