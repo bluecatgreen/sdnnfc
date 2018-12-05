@@ -1,0 +1,73 @@
+tosca_definitions_version: tosca_simple_yaml_1_0
+description: Central Base network service
+
+imports:
+  - tosca-simple-nfv-1.0.yaml
+  - forti4_service.yaml
+  - riverbed.yaml
+  - local_base_nsd.yaml
+
+node_types:
+  tosca.nodes.nfv.riftio.CentralBase:
+    derived_from: tosca.nodes.nfv.NS
+    properties:
+      ns_id:
+        type: string
+        required: true
+        default: ad0cbde8-3958-4632-9661-930d78dbd194
+        constraints:
+          - valid_values: [ ad0cbde8-3958-4632-9661-930d78dbd194 ]
+      designer:
+        type: string
+        required: true
+        default: VODAFONE
+        constraints:
+          - valid_values: [ VODAFONE ]
+      version:
+        type: string
+        required: true
+        default: 1.0
+        constraints:
+          - valid_values: [ 1.0 ]
+      name:
+        type: string
+        required: true
+        default: Central Base
+        constraints:
+          - valid_values: [ 'Central Base' ]
+      invariant_id:
+        type: string
+        required: true
+        default: a89e6ed3-5417-4e5b-8b28-1fba73426994
+        constraints:
+          - valid_values: [ a89e6ed3-5417-4e5b-8b28-1fba73426994 ]
+
+topology_template:
+  substitution_mappings:
+    node_type: tosca.nodes.nfv.riftio.CentralBase
+
+  node_templates:
+    local_base_svc:
+      type: tosca.nodes.nfv.riftio.LocalBase
+      
+    firewall:
+      type: tosca.nodes.nfv.riftio.forti4Service
+      requirements:
+        - virtual_link: mgmt_vl
+
+    sd_wan:
+      type: tosca.nodes.nfv.riftio.Riverbed
+      requirements:
+        - virtual_link: mgmt_vl
+
+    mgmt_vl:
+      type: tosca.nodes.nfv.NsVirtualLink
+      properties:
+        version: 1.0
+        connectivity_type:
+          layer_protocol: ipv4
+        vl_profile:
+          max_bit_rate_requirements:
+            root: 10
+          min_bit_rate_requirements:
+            root: 1

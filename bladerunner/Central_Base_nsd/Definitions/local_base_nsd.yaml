@@ -1,0 +1,131 @@
+tosca_definitions_version: tosca_simple_yaml_1_0
+description: Local Base network service
+
+imports:
+  - tosca-simple-nfv-1.0.yaml
+  - forti4_service.yaml
+  - riverbed.yaml
+  - infosys-arvr-svc.yaml
+
+node_types:
+  tosca.nodes.nfv.riftio.LocalBase:
+    derived_from: tosca.nodes.nfv.NS
+    properties:
+      ns_id:
+        type: string
+        required: true
+        default: ac870065-87b0-437f-b157-0d39242e06cc
+        constraints:
+          - valid_values: [ ac870065-87b0-437f-b157-0d39242e06cc ]
+      designer:
+        type: string
+        required: true
+        default: DU
+        constraints:
+          - valid_values: [ DU ]
+      version:
+        type: string
+        required: true
+        default: 1.0
+        constraints:
+          - valid_values: [ 1.0 ]
+      name:
+        type: string
+        required: true
+        default: Local Base
+        constraints:
+          - valid_values: [ 'Local Base' ]
+      invariant_id:
+        type: string
+        required: true
+        default: a89e6ed3-5417-4e5b-8b28-1fba73426994
+        constraints:
+          - valid_values: [ a89e6ed3-5417-4e5b-8b28-1fba73426994 ]
+
+group_types:
+  tosca.groups.nfv.riftio.scaling:
+    derived_from: tosca.groups.Root
+    properties:
+      name:
+        type: string
+      min_instances:
+        type: integer
+        description: >-
+          Minimum instances of the scaling group which are allowed.
+          These instances are created by default when the network service
+          is instantiated.
+      max_instances:
+        type: integer
+        description: >-
+          Maximum instances of this scaling group that are allowed
+          in a single network service. The network service scaling
+          will fail, when the number of service group instances
+          exceed the max-instance-count specified.
+      cooldown_time:
+        type: integer
+        description: >-
+          The duration after a scaling-in/scaling-out action has been
+          triggered, for which there will be no further optional
+      ratio:
+        type: map
+        entry_schema:
+          type: integer
+        description: >-
+          Specify the number of instances of each VNF to instantiate
+          for a scaling action
+    members: [tosca.nodes.nfv.VNF]
+    interfaces:
+        type: tosca.interfaces.nfv.riftio.scaling.action
+
+interface_types:
+  tosca.interfaces.nfv.riftio.scaling.action:
+    derived_from: tosca.interfaces.Root
+    pre_scale_in:
+      description: Operation to execute before a scale in
+    post_scale_in:
+      description: Operation to execute after a scale in
+    pre_scale_out:
+      description: Operation to execute before a scale out
+    post_scale_out:
+      description: Operation to execute after a scale out
+
+topology_template:
+  substitution_mappings:
+    node_type: tosca.nodes.nfv.riftio.LocalBase
+
+  node_templates:
+    firewall:
+      type: tosca.nodes.nfv.riftio.forti4Service
+      requirements:
+        - virtual_link: mgmt_vl
+
+    sd_wan:
+      type: tosca.nodes.nfv.riftio.Riverbed
+      requirements:
+        - virtual_link: mgmt_vl
+
+    arvr:
+      type: tosca.nodes.nfv.riftio.Infosys_ARVR_Svc
+      requirements:
+        - virtual_link: mgmt_vl
+
+    mgmt_vl:
+      type: tosca.nodes.nfv.NsVirtualLink
+      properties:
+        version: 1.0
+        connectivity_type:
+          layer_protocol: ipv4
+        vl_profile:
+          max_bit_rate_requirements:
+            root: 10
+          min_bit_rate_requirements:
+            root: 1
+
+  groups:
+    scale_group_1:
+      type: tosca.groups.nfv.riftio.scaling
+      properties:
+        name: Scale Group 1
+        min_instances: 0
+        max_instances: 10
+      members: [firewall]

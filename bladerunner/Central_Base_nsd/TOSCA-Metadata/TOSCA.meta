@@ -1,0 +1,5 @@
+TOSCA-Meta-File-Version: 1.0
+CSAR-Version: 1.1
+Created-By: RIFT.io
+Entry-Definitions: Definitions/central_base_nsd.yaml
+Entry-Manifest: central_base_nsd.mf

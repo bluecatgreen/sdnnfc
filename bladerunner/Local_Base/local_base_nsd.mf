@@ -1,0 +1,29 @@
+metadata:
+vnf_release_data_time: 2018-04-19T17:44:25+0000
+vnf_product_name: Local_Base
+vnf_provider_id: DU
+vnf_package_version: 1.0
+
+Source: Definitions/local_base_nsd.yaml
+Algorithm: SHA-256
+Hash: c0af42b116f32de79b95f39b2ae76964bf931db05c37e4c89d73a6d600e755cc
+
+Source: Definitions/riverbed.yaml
+Algorithm: SHA-256
+Hash: 1c2c118d2982896c493e17201741c298730b5968cefd6376a819346ebd164f80
+
+Source: Definitions/forti4_Service.yaml
+Algorithm: SHA-256
+Hash: 05c058da9bd0ead96c51fad961b6f76f690b1fb07b1ec2687ea644567729afad
+
+Source: Definitions/infosys-arvr-svc.yaml
+Algorithm: SHA-256
+Hash: 22ac3ab5cc838ab2fd40912c2db16f653f7b6b959dd73b4d0a13ef557f2a9109
+
+Source: Files/ChangeLog.txt
+Algorithm: SHA-256
+Hash: 03947d8f246e95e5b59be1cd1fbab3ae58d97a7bbb9c8aa4867155908eee7a3e
+
+Source: Definitions/tosca-simple-nfv-1.0.yaml
+Algorithm: SHA-256
+Hash: 84ad6590163041b369cfde0eccf91648a78f69ef8398fef19cc6c7654541e3fe

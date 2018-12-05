@@ -1,0 +1,155 @@
+tosca_definitions_version: tosca_simple_yaml_1_0
+description: 5409cc3a-b0d7-41e6-9bbc-98adf539cd3b
+
+imports:
+  - tosca-simple-nfv-1.0.yaml
+
+node_types:
+  tosca.nodes.nfv.riftio.Infosys_ARVR_Svc:
+    derived_from: tosca.nodes.nfv.VNF
+    properties:
+      descriptor_id:
+        constraints:
+        - valid_values:
+          - 3ef03d7e-965d-44bf-be15-a5e826935479
+        default: 3ef03d7e-965d-44bf-be15-a5e826935479
+        type: string
+      descriptor_version:
+        constraints:
+        - valid_values:
+          - "1.0"
+        default: "1.0"
+        type: string
+      flavour_description:
+        constraints:
+        - valid_values:
+          - Default flavour
+        default: Default flavour
+        type: string
+      flavour_id:
+        constraints:
+        - valid_values:
+          - default
+        default: default
+        type: string
+      product_info_name:
+        constraints:
+        - valid_values:
+          - Infosys-ARVR-Svc
+        default: Infosys-ARVR-Svc
+        type: string
+      product_name:
+        constraints:
+        - valid_values:
+          - Infosys-ARVR-Svc
+        default: Infosys-ARVR-Svc
+        type: string
+      provider:
+        constraints:
+        - valid_values:
+          - unknown
+        default: unknown
+        type: string
+      software_version:
+        constraints:
+        - valid_values:
+          - "1.0"
+        default: "1.0"
+        type: string
+      vnfm_info:
+        default: []
+        type: list
+topology_template:
+  substitution_mappings:
+    requirements:
+    - virtual_link:
+      - iovdu_0__interface-2
+      - virtual_link
+    - virtual_link:
+      - iovdu_0__interface-1
+      - virtual_link
+    node_type: tosca.nodes.nfv.riftio.Infosys-ARVR-Svc
+  node_templates:
+    iovdu_0__interface-1:
+      type: tosca.nodes.nfv.VduCp
+      properties:
+        layer_protocol:
+        - ipv4
+        - ipv6
+        protocol_data:
+        - address_data:
+            address_type: ip_address
+            l3_address_data:
+              floating_ip_activated: false
+              ip_address_assignment: true
+          asscociated_layer_protocol: ipv4
+        - address_data:
+            address_type: ip_address
+            l3_address_data:
+              floating_ip_activated: false
+              ip_address_assignment: true
+          asscociated_layer_protocol: ipv6
+        trunk_mode: false
+      requirements:
+      - virtual_binding:
+          node: iovdu_0
+    iovdu_0__storage:
+      type: tosca.nodes.nfv.Vdu.VirtualStorage
+      properties:
+        id: iovdu_0__storage
+        size_of_storage: 80 GB
+        type_of_storage: volume
+      artifacts:
+        sw_image:
+          checksum:
+          container_format: bare
+          disk_format: raw
+          min_disk: 4 GB
+          name: info_arvr.qcow2
+          size: 4 GB
+          sw_image: ../Files/images/info_arvr.qcow2
+          version: 1.0
+    iovdu_0:
+      type: tosca.nodes.nfv.Vdu.Compute
+      properties:
+        configurable_properties:
+          supplemental_boot_data:
+            additional_vnfc_configurable_properties:
+              boot_data_drive: "false"
+        description: name
+        name: iovdu_0
+        vdu_profile:
+          max_number_of_instances: 1
+          min_number_of_instances: 1
+      capabilities:
+        virtual_compute:
+          properties:
+            virtual_cpu:
+              num_virtual_cpu: 2
+            virtual_memory:
+              virtual_mem_size: 4096 MB
+      requirements:
+      - virtual_storage: iovdu_0__storage
+    iovdu_0__interface-2:
+      type: tosca.nodes.nfv.VduCp
+      properties:
+        layer_protocol:
+        - ipv4
+        - ipv6
+        protocol_data:
+        - address_data:
+            address_type: ip_address
+            l3_address_data:
+              floating_ip_activated: false
+              ip_address_assignment: true
+          asscociated_layer_protocol: ipv4
+        - address_data:
+            address_type: ip_address
+            l3_address_data:
+              floating_ip_activated: false
+              ip_address_assignment: true
+          asscociated_layer_protocol: ipv6
+        trunk_mode: false
+      requirements:
+      - virtual_binding:
+          node: iovdu_0
