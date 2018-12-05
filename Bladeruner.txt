@@ -1,0 +1,56 @@
+.
+./CENX
+./CENX/SA_Descriptor_Example.yaml
+./CENX/readme.md
+./BearingPoint
+./BearingPoint/Invoices
+./BearingPoint/Invoices/Invoice du Presentation.pdf
+./BearingPoint/Invoices/Invoice Caterpillar Presentation.pdf
+./BearingPoint/Invoices/readme.md
+./BearingPoint/Payloads
+./BearingPoint/Payloads/Service Qualification Call.txt
+./BearingPoint/Payloads/Service Creation OrderJSON.TXT
+./BearingPoint/Payloads/readme.md
+./BearingPoint/Payloads/Service Termination Order.txt
+./BearingPoint/readme.md
+./Infosys - ONAP
+./Infosys - ONAP/readme.md
+./Infosys - ONAP/NBI Payloads
+./Infosys - ONAP/NBI Payloads/postSOReq.txt
+./Infosys - ONAP/NBI Payloads/serviceInventoryResp.txt
+./Infosys - ONAP/NBI Payloads/serviceCatalogDistributed.txt
+./Infosys - ONAP/NBI Payloads/readme.md
+./Infosys - ONAP/NBI Payloads/postSOResp.txt
+./Infosys - ONAP/NBI Payloads/serviceInventoryARVRVM.txt
+./Infosys - ONAP/NBI Payloads/serviceCatalogAllResp.txt
+./Infosys - ONAP/NBI Payloads/serviceInventoryDistributed.txt
+./Infosys - ONAP/TOSCA
+./Infosys - ONAP/TOSCA/service-BldRvbdSdwanService-csar.csar
+./Infosys - ONAP/TOSCA/service-BldExfoVverifierSrvc-csar.csar
+./Infosys - ONAP/TOSCA/service-BldFrtFirewallService-csar.csar
+./Infosys - ONAP/TOSCA/readme.md
+./Infosys - ONAP/TOSCA/service-Infosysarvrsvc-csar.csar
+./RIFT.io
+./RIFT.io/API_Payloads
+./RIFT.io/API_Payloads/CRM-serviceOrder
+./RIFT.io/API_Payloads/DO-serviceInventory
+./RIFT.io/API_Payloads/SO-serviceOrder
+./RIFT.io/Service Assurance
+./RIFT.io/Service Assurance/BLD-FGT-vFW.zip
+./RIFT.io/Base
+./RIFT.io/Base/Local_Service_Monitoring.zip
+./RIFT.io/Base/Infosys-ARVR-Svc__1.0.zip
+./RIFT.io/Base/Central_Base_nsd.zip
+./RIFT.io/Base/Local_Base.zip
+./RIFT.io/Base/Infosys-VV-VSP-SERVICE__1.0.zip
+./RIFT.io/Base/Central_Service_Monitoring.zip
+./RIFT.io/Base/forti4_Service__1.0.zip
+./RIFT.io/Base/BLD-RUN-v_VERIFIER-VSP-SERVICE__1.0.zip
+./RIFT.io/readme.md
+./README.md
+./Riverbed
+./Riverbed/create_new_DC.xml
+./Riverbed/create_new_SD-WAN.xml
+./Riverbed/readme.md
+./EXFO
+./EXFO/readme.md
