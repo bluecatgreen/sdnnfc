@@ -6,3 +6,4 @@ Subnet ID subnet-9a1321b1
 IAM role Developer-vz-it-np
 Key pair name Jankiram2018
 Vsad IPJV
+UserID v55
