@@ -12,4 +12,9 @@ Environment="HTTPS_PROXY_USERNAME="
 ---
   sudo systemctl daemon-reload
   sudo systemctl restart docker
-  sudo docker pull quay.io/goswagger/swagger
+  sudo docker pull quay.io/goswagger/swagger (example)
+
+# Permission errors - Add docker group to your user.
+
+#Building an image  --build-arg needs to be passed proxy with user id/password not required
+docker build --build-arg HTTP_PROXY=http://proxy.ebiz.com:80 --build-arg HTTPS_PROXY=http://proxy.ebiz.com:80 -t friendlyhello .
