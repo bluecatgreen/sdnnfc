@@ -1,0 +1,15 @@
+sudo apt update 
+sudo apt install xrdp
+sudo service xrdp restart
+sudo vi /etc/ssh/sshd_config
+sudo service sshd restart
+sudo apt install -y xfce4 xfce4-goodies
+sudo useradd -m -d /home/rjankir rjankir
+sudo passwd rjankir
+su - rjankir
+      echo xfce4-session >~/.xsession
+#add lightweight browser
+
+sudo apt install epiphany-browser
+sudo update-alternatives --config www-browser
+sudo update-alternatives --config x-www-browser

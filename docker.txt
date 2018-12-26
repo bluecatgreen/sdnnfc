@@ -18,3 +18,4 @@ Environment="HTTPS_PROXY_USERNAME="
 
 #Building an image  --build-arg needs to be passed proxy with user id/password not required
 docker build --build-arg HTTP_PROXY=http://proxy.ebiz.com:80 --build-arg HTTPS_PROXY=http://proxy.ebiz.com:80 -t friendlyhello .
+docker run -p 4000:80 friendlyhello
