@@ -1,0 +1,15 @@
+#Steps to view a swagger file, json or yaml locally using swagger-ui
+docker pull swaggerapi/swagger-ui
+git clone https://github.com/MEF-GIT/MEF-LSO-Presto-SDK
+cd MEF-LSO-Presto-SDK/
+cd published/swagger/
+ presto-nrp.yaml 
+#had to get npm for lightweight HTTP server
+ sudo apt install npm
+ npm install http-server
+ sudo apt install nodejs-legacy
+ export PATH=$PATH:$PWD
+ cd MEF-LSO-Presto-SDK/
+ cd published/swagger/
+ http-server -p 3333 -c-1 --cors
+docker run  -p 1111:8080 -e API_URL='http://127.0.0.1:3333/presto-nrp.yaml' swaggerapi/swagger-ui
