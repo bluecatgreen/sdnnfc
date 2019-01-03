@@ -1,0 +1,13 @@
+Creating a simple standalong Nodejs & Mongodb App
+Ref  git clone https://github.com/cwbuecheler/node-tutorial-for-frontend-devs
+ sudo -E npm install -g express-generator
+ cd sdnnfc/
+ express dockerApp
+ cd dockerApp/
+ vi package.json 
+ npm install
+ npm start
+ sudo apt install mongodb-server
+ mkdir mongdb
+ cd mongdb/
+ mongod --nojournal --dbpath .
