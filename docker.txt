@@ -19,3 +19,20 @@ Environment="HTTPS_PROXY_USERNAME="
 #Building an image  --build-arg needs to be passed proxy with user id/password not required
 docker build --build-arg HTTP_PROXY=http://proxy.ebiz.com:80 --build-arg HTTPS_PROXY=http://proxy.ebiz.com:80 -t friendlyhello .
 docker run -p 4000:80 friendlyhello
+
+
+#using docker-compose.yml
+
+docker swarm init
+
+docker stack deploy -c docker-compose.yml appname
+
+docker service ls
+
+docker service ps appname_web
+
+docker container ls -q
+
+docker stake rm appname
+
+docker swarm leave --force
