@@ -1,0 +1,79 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mBuilding sample-toaster 1.10.0-SNAPSHOT[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36msample-toaster[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/ubuntu/opendaylight-new/controller/opendaylight/md-sal/samples/toaster/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M2:enforce[m [1m(enforce-maven)[m @ [36msample-toaster[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M2:enforce[m [1m(enforce-banned-dependencies)[m @ [36msample-toaster[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mgit-commit-id-plugin:2.2.6:revision[m [1m(get-git-infos)[m @ [36msample-toaster[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjacoco-maven-plugin:0.8.2:prepare-agent[m [1m(pre-unit-test)[m @ [36msample-toaster[0;1m ---[m
+[[1;34mINFO[m] argLine set to -javaagent:/home/ubuntu/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ubuntu/opendaylight-new/controller/opendaylight/md-sal/samples/toaster/target/code-coverage/jacoco.exec,excludes=**/gen/**:**/generated-sources/**:**/generated-test-sources/**:**/yang-gen/**:**/yang-gen-config/**:**/yang-gen-sal/**:**/yang-gen-code/**:**/pax/**
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32myang-maven-plugin:2.1.8:generate-sources[m [1m(binding)[m @ [36msample-toaster[0;1m ---[m
+[[1;34mINFO[m] yang-to-sources: Code generator instantiated from org.opendaylight.mdsal.binding.maven.api.gen.plugin.CodeGeneratorImpl
+[[1;34mINFO[m] yang-to-sources: Inspecting /home/ubuntu/opendaylight-new/controller/opendaylight/md-sal/samples/toaster/src/main/yang
+[[1;34mINFO[m] yang-to-sources: Found 0 dependencies in 37.96 ms
+[[1;34mINFO[m] yang-to-sources: Project model files found: 22
+[[1;34mINFO[m] yang-to-sources: 20 YANG models processed in 1.146 s
+[[1;34mINFO[m] yang-to-sources: Sources will be generated to /home/ubuntu/opendaylight-new/controller/opendaylight/md-sal/samples/toaster/target/generated-sources/mdsal-binding
+[[1;31mERROR[m] yang-to-sources: Unable to generate sources with org.opendaylight.mdsal.binding.maven.api.gen.plugin.CodeGeneratorImpl generator
+[1;31mjava.lang.NullPointerException[m
+    [1mat[m org.opendaylight.mdsal.binding.java.api.generator.AbstractJavaGeneratedType.getReferenceString ([1mAbstractJavaGeneratedType.java:111[m)
+    [1mat[m org.opendaylight.mdsal.binding.java.api.generator.AbstractJavaGeneratedType.getReferenceString ([1mAbstractJavaGeneratedType.java:85[m)
+    [1mat[m org.opendaylight.mdsal.binding.java.api.generator.JavaFileTemplate.importedName ([1mJavaFileTemplate.java:68[m)
+    [1mat[m org.opendaylight.mdsal.binding.java.api.generator.ClassTemplate.generateFields ([1mClassTemplate.java:1168[m)
+    [1mat[m org.opendaylight.mdsal.binding.java.api.generator.ClassTemplate.generateBody ([1mClassTemplate.java:166[m)
+    [1mat[m org.opendaylight.mdsal.binding.java.api.generator.ClassTemplate.body ([1mClassTemplate.java:128[m)
+    [1mat[m org.opendaylight.mdsal.binding.java.api.generator.BaseTemplate.generate ([1mBaseTemplate.java:88[m)
+    [1mat[m org.opendaylight.mdsal.binding.java.api.generator.TOGenerator.generate ([1mTOGenerator.java:35[m)
+    [1mat[m org.opendaylight.mdsal.binding.java.api.generator.GeneratorJavaFile$GeneratorStringSupplier.get ([1mGeneratorJavaFile.java:53[m)
+    [1mat[m org.opendaylight.mdsal.binding.java.api.generator.GeneratorJavaFile$GeneratorStringSupplier.get ([1mGeneratorJavaFile.java:42[m)
+    [1mat[m org.opendaylight.mdsal.binding.maven.api.gen.plugin.CodeGeneratorImpl.generateSources ([1mCodeGeneratorImpl.java:112[m)
+    [1mat[m org.opendaylight.yangtools.yang2sources.plugin.YangToSourcesProcessor.generateSourcesWithOneGenerator ([1mYangToSourcesProcessor.java:383[m)
+    [1mat[m org.opendaylight.yangtools.yang2sources.plugin.YangToSourcesProcessor.generateSources ([1mYangToSourcesProcessor.java:332[m)
+    [1mat[m org.opendaylight.yangtools.yang2sources.plugin.YangToSourcesProcessor.conditionalExecute ([1mYangToSourcesProcessor.java:159[m)
+    [1mat[m org.opendaylight.yangtools.yang2sources.plugin.YangToSourcesMojo.execute ([1mYangToSourcesMojo.java:127[m)
+    [1mat[m org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo ([1mDefaultBuildPluginManager.java:134[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:208[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:154[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:146[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject ([1mLifecycleModuleBuilder.java:117[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject ([1mLifecycleModuleBuilder.java:81[m)
+    [1mat[m org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build ([1mSingleThreadedBuilder.java:51[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleStarter.execute ([1mLifecycleStarter.java:128[m)
+    [1mat[m org.apache.maven.DefaultMaven.doExecute ([1mDefaultMaven.java:309[m)
+    [1mat[m org.apache.maven.DefaultMaven.doExecute ([1mDefaultMaven.java:194[m)
+    [1mat[m org.apache.maven.DefaultMaven.execute ([1mDefaultMaven.java:107[m)
+    [1mat[m org.apache.maven.cli.MavenCli.execute ([1mMavenCli.java:955[m)
+    [1mat[m org.apache.maven.cli.MavenCli.doMain ([1mMavenCli.java:290[m)
+    [1mat[m org.apache.maven.cli.MavenCli.main ([1mMavenCli.java:194[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 ([1mNative Method[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke ([1mNativeMethodAccessorImpl.java:62[m)
+    [1mat[m jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke ([1mDelegatingMethodAccessorImpl.java:43[m)
+    [1mat[m java.lang.reflect.Method.invoke ([1mMethod.java:564[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced ([1mLauncher.java:289[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.launch ([1mLauncher.java:229[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode ([1mLauncher.java:415[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.main ([1mLauncher.java:356[m)
+[[1;31mERROR[m] yang-to-sources: One or more code generators failed, including failed list(generatorClass=exception) {org.opendaylight.mdsal.binding.maven.api.gen.plugin.CodeGeneratorImpl=java.lang.NullPointerException}
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time: 17.417 s
+[[1;34mINFO[m] Finished at: 2019-03-19T10:54:33Z
+[[1;34mINFO[m] Final Memory: 42M/176M
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.opendaylight.yangtools:yang-maven-plugin:2.1.8:generate-sources[m [1m(binding)[m on project [36msample-toaster[m: [1;31myang-to-sources: One or more code generators failed, including failed list(generatorClass=exception) {org.opendaylight.mdsal.binding.maven.api.gen.plugin.CodeGeneratorImpl=java.lang.NullPointerException}[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
